@@ -1,3 +1,4 @@
+# Script to create datetime features
 import pandas as pd
 import numpy as np
 import multiprocessing
@@ -9,11 +10,11 @@ def file_len(fname):
 	print("File length: ",i+1)
 	return i + 1
 
+# For every station, we create starttime, endtime and duration
 def traverse_dataframe(filename,df,output_filename,mode,feat_set,feat_names, num_rows):
 	CHUNKSIZE = 100000
 	for feat in feat_set:
-		print(mode,feat)
-		# Get corresponding cols
+		# Get corresponding cols for each feature
 		col_list = [name for name in feat_names if feat in name]
 		col_list.append('Id')
 		# Use relevant cols
@@ -63,10 +64,10 @@ if __name__ == "__main__":
 	NROWS_TEST = file_len(TEST_DATE)
 	# NROWS = 200
 
-	# Get feat_set
+	# Get feature set
 	sample = pd.read_csv(TRAIN_DATE, nrows=1)
-	train = pd.read_csv(TRAIN_DATE, usecols=['Id'], nrows=NROWS_TRAIN)
-	test = pd.read_csv(TEST_DATE, usecols=['Id'], nrows=NROWS_TEST)
+	train = pd.read_csv(TRAIN_DATE, usecols=['Id'])
+	test = pd.read_csv(TEST_DATE, usecols=['Id'])
 	feat_names = list(sample.columns.values)
 	feat_set = []
 	for feat in feat_names:
@@ -76,7 +77,7 @@ if __name__ == "__main__":
 				feat_set.append(feat_compo[0])
 			if (not feat_compo[1] in feat_set):
 				feat_set.append(feat_compo[1])
-
+	# Two processes to speed up: one is working on train set one is working on test set
 	p1 = multiprocessing.Process(target=traverse_dataframe, args=(TRAIN_DATE,train,PROCESSED_TRAIN_FILENAME,'tr',feat_set,feat_names,NROWS_TRAIN,))
 	p1.start()
 	p1 = multiprocessing.Process(target=traverse_dataframe, args=(TEST_DATE,test,PROCESSED_TEST_FILENAME,'te',feat_set,feat_names,NROWS_TEST,))
