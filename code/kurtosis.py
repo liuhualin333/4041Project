@@ -3,7 +3,7 @@
 import pandas as pd
 import numpy as np
 
-DATA_DIR = "."
+DATA_DIR = "../data"
 
 ID_COLUMN = 'Id'
 TARGET_COLUMN = 'Response'

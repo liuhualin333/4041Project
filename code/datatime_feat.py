@@ -49,7 +49,7 @@ def traverse_dataframe(filename,df,output_filename,mode,feat_set,feat_names, num
 		df.to_csv(f, index=False)
 
 if __name__ == "__main__":
-	DATA_DIR = '.'
+	DATA_DIR = '../data'
 
 	TRAIN_NUMERIC = "{0}/train_numeric.csv".format(DATA_DIR)
 	TRAIN_DATE = "{0}/train_date.csv".format(DATA_DIR)
