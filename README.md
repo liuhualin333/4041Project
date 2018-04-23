@@ -18,9 +18,9 @@ It is about a closed kaggle competition - Bosch Production Line Performance.
 
 There are a total of five machine learning models implemented in this reposiroty for Matthews correlation coefficient calculation.
 1. `XGBoostModel.py`: XGBoost 
-2. ``: lightGBM, 
-3. `random_forest.py`: Random Forest, 
-4. ``: SVM 
+2. `gbm.py`: lightGBM 
+3. `random_forest.py`: Random Forest 
+4. ``:SVM 
 5. ``: Neural Network. 
 
 First three of them works on given dataset, the last two were abandoned. 
