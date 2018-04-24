@@ -5,7 +5,7 @@ This repository contains teh source code and other helper files for the group pr
 
 It is about a closed kaggle competition - Bosch Production Line Performance. 
 
-### Dependencies 
+### Prerequisite  
 * [NumPy](http://www.numpy.org/)
 * [Pandas](http://pandas.pydata.org/)
 * [SciKit-Learn](http://scikit-learn.org/stable/)
@@ -14,15 +14,12 @@ It is about a closed kaggle competition - Bosch Production Line Performance.
 * [XGBoost](https://github.com/dmlc/xgboost)
 * [Seaborn](https://seaborn.pydata.org/index.html)
 
-### Source code 
+### Pre-processing 
+The pre-processing of features are in ` ` files. 
 
-There are a total of five machine learning models implemented in this reposiroty for Matthews correlation coefficient calculation.
-1. `XGBoostModel.py`: XGBoost 
-2. `gbm.py`: lightGBM 
-3. `random_forest.py`: Random Forest 
-4. ``:SVM 
-5. ``: Neural Network. 
 
-First three of them works on given dataset, the last two were abandoned. 
-The above models were tested on kaggle [datasets](https://www.kaggle.com/c/bosch-production-line-performance/data). 
-The performance of the models on these datasets can be found [here]().
+### Running the tests 
+The best performance is generated from XGBoost model in `XGBoostModel.py`file. 
+
+### Acknowledgement 
+All models were tested on kaggle [datasets](https://www.kaggle.com/c/bosch-production-line-performance/data). 
