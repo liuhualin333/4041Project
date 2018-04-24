@@ -3,7 +3,7 @@
 ### Introduction  
 This repository contains teh source code and other helper files for the group project of course CZ4041 - Machine Learning at Nanyang Technological University, Singapore. 
 
-It is about a closed kaggle competition - Bosch Production Line Performance. 
+It is about a closed kaggle competition - [Bosch Production Line Performance](https://www.kaggle.com/c/bosch-production-line-performance). 
 
 ### Prerequisite  
 * [NumPy](http://www.numpy.org/)
