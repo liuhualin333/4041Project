@@ -12,13 +12,15 @@ It is about a closed kaggle competition - Bosch Production Line Performance.
 * [SciPy](http://www.scipy.org/)
 * [Matplotlib](http://matplotlib.org/)
 * [XGBoost](https://github.com/dmlc/xgboost)
-* [Seaborn](https://seaborn.pydata.org/index.html)
+* [Seaborn](https://seaborn.pydata.org/index.html) 
 
 ### Pre-processing 
 The pre-processing of features are in `clean_slate.py`, `count_dup.py`, `datatime_feat.py`, `id_feat.py`, `kurtosis.py` and `station_marker.py` files. 
 
 ### Running the tests 
-The best performance is generated from XGBoost model in `XGBoostModel.py` file. 
+The best performance is generated from XGBoost model in `xgboost.py` file. 
+> All data files are under __../data__ folder.
 
 ### Acknowledgement 
 All models were tested on kaggle [datasets](https://www.kaggle.com/c/bosch-production-line-performance/data). 
+ 
