@@ -15,7 +15,6 @@ It is about a closed kaggle competition - Bosch Production Line Performance.
 * [Seaborn](https://seaborn.pydata.org/index.html)
 
 ### Pre-processing 
-njdsnskavmk
 The pre-processing of features are in `clean_slate.py`, `count_dup.py`, `datatime_feat.py`, `id_feat.py`, `kurtosis.py` and `station_marker.py` files. 
 
 ### Running the tests 
