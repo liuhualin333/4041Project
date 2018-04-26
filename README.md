@@ -3,7 +3,7 @@
 ### Introduction  
 This repository contains the source code and other helper files for the group project of course CZ4041 - Machine Learning at Nanyang Technological University, Singapore. 
 
-It is about a closed kaggle competition - [Bosch Production Line Performance](https://www.kaggle.com/c/bosch-production-line-performance). 
+It is about a closed kaggle competition - [Bosch Production Line Performance](https://www.kaggle.com/c/bosch-production-line-performance). Datasets are obtained [here](https://www.kaggle.com/c/bosch-production-line-performance/data). 
 
 ### Pre-requisite
 Please make sure you have the following packages before running scripts
@@ -39,5 +39,4 @@ These scripts are placed in `Others` folder
 
 ### Acknowledgement 
 All models' performances were measured by submission to Kaggle competition.
-Datasets are obtained [here](https://www.kaggle.com/c/bosch-production-line-performance/data). 
  
