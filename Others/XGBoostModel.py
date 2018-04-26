@@ -8,9 +8,9 @@ import matplotlib.pyplot as plt
 from sklearn.grid_search import GridSearchCV
 # import seaborn as sns
 
-def mcc(tp, tn, fp, fn):
-    sup = tp * tn - fp * fn
-    inf = (tp + fp) * (tp + fn) * (tn + fp) * (tn + fn)
+def mcc(true_pos, true_neg, false_pos, false_neg):
+    sup = true_pos * true_neg - false_pos * false_neg
+    inf = (true_pos + false_pos) * (true_pos + false_neg) * (true_neg + false_pos) * (true_neg + false_neg)
     if inf == 0:
         return 0
     else:
@@ -22,21 +22,21 @@ def eval_mcc(y_true, y_prob, show=False):
     n = y_true.shape[0]
     nump = 1.0 * np.sum(y_true)  # number of positive
     numn = n - nump  # number of negative
-    tp = nump
-    tn = 0.0
-    fp = numn
-    fn = 0.0
+    true_pos = nump
+    true_neg = 0.0
+    false_pos = numn
+    false_neg = 0.0
     best_mcc = 0.0
     best_id = -1
     mccs = np.zeros(n)
     for i in range(n):
         if y_true_sort[i] == 1:
-            tp -= 1.0
-            fn += 1.0
+            true_pos -= 1.0
+            false_neg += 1.0
         else:
-            fp -= 1.0
-            tn += 1.0
-        new_mcc = mcc(tp, tn, fp, fn)
+            false_pos -= 1.0
+            true_neg += 1.0
+        new_mcc = mcc(true_pos, true_neg, false_pos, false_neg)
         mccs[i] = new_mcc
         if new_mcc >= best_mcc:
             best_mcc = new_mcc
